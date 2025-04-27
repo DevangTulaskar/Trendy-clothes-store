@@ -1,0 +1,500 @@
+@media only screen and (max-width: 1100px) {
+    /* nav-bar */
+    .searchbar input{
+        height: 40px;
+        width: 280px;
+        font-size: 14px;
+    }
+
+    .searchbar i{
+        right: 13px;
+        top: 9px;
+        font-size: 17px;
+    }
+
+    .nav-list{
+        gap: 30px;
+        font-size: 18px;
+    }
+    
+    .nav-list span{
+        font-size: 14px;
+    }
+    
+    #items-added{
+        width: 16px;
+        font-size: 11px;
+    }
+
+    /* service */
+    .service{
+        padding: 60px 0;
+    }
+    .service-list i{
+        font-size: 35px;    
+    }
+    
+    .service-list-item p{
+        font-size: 17px;
+    }
+    
+    .service-list-item span{
+        font-size: 13px;
+    }
+
+    /* footer */
+    .footer-about {
+        max-width: 800px; 
+        width: 100%;
+    }
+
+    .footer-list{
+        gap: 60px;
+    }
+
+
+    .product-list .item-details h3{
+        font-size: 38px;
+    }
+}
+
+
+@media only screen and (max-width: 1010px) {
+    /* Clothing and accessories sections */
+    .clothing-list-item,
+    .accessories-list-item{
+        height: 280px;
+        max-width: 240px;
+    }    
+
+    .clothing-btn i:not(.clothing-cart-btn i),
+    .accessories-btn i:not(.accessories-cart-btn i) {
+        font-size: 18px;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .clothing-cart-btn,
+    .accessories-cart-btn {
+        height: 40px;
+        width: 120px;
+        padding: 9px;
+    }
+
+    .clothing-cart-btn span,
+    .accessories-cart-btn span{
+        font-size: 14px;
+        padding-right: 3px;
+    }
+
+    .clothing-cart-btn i,
+    .accessories-cart-btn i {
+        font-size: 14px;
+        padding: 3px;
+    }
+
+    .clothing-detail h3,
+    .accessories-detail h3{
+        font-size: 25px;
+    }
+
+    .clothing-detail span,
+    .accessories-detail span{
+        font-size: 20px;
+    }
+
+
+    /* product-details html page */
+    .product-list .item-image img{
+        width: 420px;
+        height: 420px;
+    }
+    
+    .product-list .item-details h3{
+        font-size: 40px;
+    }
+    
+    .product-list .item-details p:nth-child(4){
+        padding-top: 10px !important;
+        font-size: 36px;
+    }
+    
+    .product-list .item-details .clothing-cart-btn span,
+    .product-list .item-details .accessories-cart-btn span,
+    .product-list .item-details .clothing-cart-btn i,
+    .product-list .item-details .accessories-cart-btn i{
+        font-size: 20px ;
+        gap: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 960px){
+    .searchbar{
+        display: none;
+    }
+
+    /* carousal */
+    .carousel-item img{
+        width: 700px;
+        height: 500px;
+    }
+
+
+    /* product details html page */
+    .product-list .item-image img{
+        width: 420px;
+        height: 420px;
+    }
+
+    .product-list .item-details h3{
+        font-size: 32px;
+    }
+
+    .product-list .item-details p:nth-child(4)> span{
+        font-size: 22px;
+    }
+    
+    .product-list .item-details p:nth-child(4){
+        font-size: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 820px){
+    .carousel-item img{
+        width: 600px;
+        height: 500px;
+    }
+
+    /* Clothing and accessories sections */
+    .clothing-products,
+    .accessories-products{
+        gap: 50px;
+    }
+
+    /* footer */
+    .footer-about {
+        padding: 0 10px;
+    }
+    
+    /* product details html page */
+    .product-list .item-image img{
+        width: 360px;
+        height: 360px;
+        margin-top: 30px;
+    }
+    
+    .product-list .item-details h3{
+        font-size: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 720px){
+    .carousel-item img{
+        width: 500px;
+        height: 500px;
+    }
+
+    /* product details html page */
+    .product-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-list .item-image img{
+        width: 400px;
+        height: 400px;
+    }
+
+    .product-list .item-details{
+        margin-top: 20px;
+    }
+    
+    .product-list .item-details h3{
+        font-size: 38px;
+    }
+        
+    .product-list .item-details p:nth-child(4)> span{
+        font-size: 22px;
+    }
+    
+    .product-list .item-details p:nth-child(4){
+        font-size: 34px;
+    }
+
+
+    /* similar products */
+    .similar-products-title { 
+        margin-top: 100px;
+    }
+}
+
+
+@media only screen and (max-width: 620px){
+    /* nav-bar */
+    .nav-box{
+        padding: 0 15px;
+    }
+    .nav-list{
+        gap: 22px;
+    }
+    
+    .nav-list span{
+        font-size: 13px;
+    }
+    
+    #items-added{
+        right: 14px;
+    }
+
+    .service{
+        padding: 50px 0;
+    }
+    .carousel-item img{
+        width: 460px;
+        height: 500px;
+    }
+
+    /* footer */
+    .footer-item h3{
+        font-family: var(--font-roboto);
+        font-size: 26px;
+    }
+    .footer-list{
+        gap: 40px;
+    }    
+}
+
+
+@media only screen and (max-width: 590px){   
+    /* Clothing and accessories sections */
+    .clothing-list-item,
+    .accessories-list-item{
+        height: 250px;
+        max-width: 200px;
+    }    
+
+    .clothing-btn i:not(.clothing-cart-btn i),
+    .accessories-btn i:not(.accessories-cart-btn i) {
+        font-size: 14px;
+        height: 30px;
+        width: 30px;
+    }
+    
+    .clothing-cart-btn,
+    .accessories-cart-btn {
+        height: 30px;        
+        width: 100px;
+        padding: 7px;
+    }
+
+    .clothing-cart-btn span,
+    .accessories-cart-btn span{
+        font-size: 12px;
+        padding-right: 3px;
+    }
+
+    .clothing-cart-btn i,
+    .accessories-cart-btn i {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .clothing-detail h3,
+    .accessories-detail h3{
+        font-size: 20px;
+    }
+
+    .clothing-detail span,
+    .accessories-detail span{
+        font-size: 18px;
+    }
+
+    .clothing-products,
+    .accessories-products{
+        gap: 30px;
+    }
+
+    .clothing-list img,
+    .accessories-list img{
+        max-width: 230px;
+    }    
+
+    .footer-list{
+        gap: 20px;
+    }
+
+    /* show cart */
+    .show-cart {
+        width: 320px;
+    }
+    .total{
+        width: 320px;
+    }
+}
+
+
+@media only screen and (max-width: 480px){
+    .nav-box{
+        padding: 0 8px;
+    }
+    .nav-list{
+        gap: 12px;
+        font-size: 16px;
+    }
+    
+    .nav-list span{
+        font-size: 12px;
+    }
+    
+    #items-added{
+        right: 14px;
+        width: 14px;
+        font-size: 10px;
+        line-height: 1.6 ;
+    }
+
+    /* top nav */
+    .top-nav ul{
+        gap: 25px;
+    }
+    
+    .top-nav ul li a{
+        font-size: 15px;
+    }
+
+    /* service */
+    .service{
+        padding: 40px 0;
+    }
+
+    .service-list{
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .service-list i{
+        font-size: 30px;    
+    }
+    
+    .service-list-item p{
+        font-size: 15px;
+    }
+    
+    .service-list-item span{
+        font-size: 12px;
+    }
+
+    /* carousal */
+    .carousel-item img{
+        width: 360px;
+        height: 360px;
+    }
+
+    /* Clothing and accessories sections */
+    .clothing-products,
+    .accessories-products{
+        padding: 0 10px;
+    }
+    .clothing-list-item,
+    .accessories-list-item{
+        height: 220px;
+        max-width: 150px;
+    }    
+
+    .clothing-btn i:not(.clothing-cart-btn i),
+    .accessories-btn i:not(.accessories-cart-btn i) {
+        font-size: 12px;
+        height: 25px;
+        width: 25px;
+    }
+    
+    .clothing-cart-btn,
+    .accessories-cart-btn {
+        height: 25px;        
+        width: 85px;
+        padding: 6px;
+    }
+
+    .clothing-cart-btn span,
+    .accessories-cart-btn span{
+        font-size: 10px;
+        padding-right: 2px;
+    }
+
+    .clothing-cart-btn i,
+    .accessories-cart-btn i {
+        font-size: 10px;
+        padding: 2px 3px;
+    }
+
+    .clothing-detail h3,
+    .accessories-detail h3{
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .clothing-detail p,
+    .accessories-detail p{
+        font-size: 13px;
+    }
+    
+    .clothing-detail span,
+    .accessories-detail span{
+        font-size: 16px;
+    }
+
+    .clothing-products,
+    .accessories-products{
+        gap: 20px;
+    }
+    
+    .clothing-list img,
+    .accessories-list img{
+        max-width: 200px;
+    }
+
+    /* show cart */
+    .show-cart {
+        width: 260px;
+    }
+
+    .total{
+        width: 260px;
+    }
+
+    .item-image img {
+        width: 50px; 
+    }
+    
+    .item-name {
+        font-size: 15px;
+    }
+    
+    .item-quantity{
+        gap: 7px;
+    }
+
+
+    /* product details html page */
+    .product-list .item-details h3{
+        font-size: 30px;
+    }
+    
+    .product-list .item-details p:nth-child(4){
+        font-size: 30px;
+    }
+
+    .product-list .item-details .clothing-cart-btn,
+    .product-list .item-details .accessories-cart-btn{
+        height: 50px;
+    }
+
+    /* similar products */
+    .similar-products-title{
+        font-size: 34px;
+    }
+}
