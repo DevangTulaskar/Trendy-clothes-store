@@ -1,56 +1,61 @@
-// Smooth scrolling
+// Smooth scrolling for top navigation
 function scrollToSection() {
-    var navHeight = 140; 
-    
-    var clothingButton = document.querySelector('.top-nav ul li:nth-child(2) a');
-    var clothingSection = document.getElementById('clothing');
+    const navHeight = 140;
 
-    var accessoriesButton = document.querySelector('.top-nav ul li:nth-child(3) a');
-    var accessoriesSection = document.getElementById('accessories');
+    const clothingButton = document.querySelector('.top-nav ul li:nth-child(2) a');
+    const accessoriesButton = document.querySelector('.top-nav ul li:nth-child(3) a');
+    const footerButton = document.querySelector('.top-nav ul li:nth-child(4) a');
 
-    var footerButton = document.querySelector('.top-nav ul li:nth-child(4) a');
-    var footerSection = document.getElementById('footer');
+    const clothingSection = document.getElementById('clothing');
+    const accessoriesSection = document.getElementById('accessories');
+    const footerSection = document.getElementById('footer');
 
     function scrollHandler(section) {
-        var sectionTop = section.offsetTop - navHeight;
+        const sectionTop = section.offsetTop - navHeight;
         window.scrollTo({ top: sectionTop, behavior: 'smooth' });
     }
 
-    clothingButton.addEventListener('click', function (event) {
-        event.preventDefault(); 
-        scrollHandler(clothingSection);
-    });
+    if (clothingButton && clothingSection) {
+        clothingButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            scrollHandler(clothingSection);
+        });
+    }
 
-    accessoriesButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollHandler(accessoriesSection);
-    });
+    if (accessoriesButton && accessoriesSection) {
+        accessoriesButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            scrollHandler(accessoriesSection);
+        });
+    }
 
-    footerButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollHandler(footerSection);
-    });
+    if (footerButton && footerSection) {
+        footerButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            scrollHandler(footerSection);
+        });
+    }
 }
 scrollToSection();
 
-
-// Show cart container
+// Show/hide cart container
 function initializeCart() {
     const cartButton = document.querySelector(".cart-button");
     const cartContainer = document.querySelector(".show-cart");
-    const closeCart = document.querySelector('.close-cart');
+    const closeCart = document.querySelector(".close-cart");
 
-    cartButton.addEventListener("click", function() {
-        cartContainer.classList.toggle("show-cart-active");
-    });
-    closeCart.addEventListener("click", function() {
-        cartContainer.classList.remove("show-cart-active");
-    });
+    if (cartButton && cartContainer && closeCart) {
+        cartButton.addEventListener("click", () => {
+            cartContainer.classList.toggle("show-cart-active");
+        });
+        closeCart.addEventListener("click", () => {
+            cartContainer.classList.remove("show-cart-active");
+        });
+    }
 }
 initializeCart();
 
-
-// Add to cart interaction
+// Add to cart logic
 function handleAddToCart() {
     const cartButtons = document.querySelectorAll('.clothing-cart-btn, .accessories-cart-btn');
     const cartContainer = document.querySelector('.show-cart');
@@ -62,7 +67,7 @@ function handleAddToCart() {
     const itemQuantities = {};
 
     cartButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const itemSection = button.closest('.clothing-list, .accessories-list');
             const itemName = itemSection.querySelector('.clothing-detail h3, .accessories-detail h3').textContent;
             const itemPriceString = itemSection.querySelector('.clothing-detail span, .accessories-detail span').textContent;
@@ -76,17 +81,15 @@ function handleAddToCart() {
 
             itemCount++;
             itemsAdded.textContent = itemCount;
-
             totalPrice += itemPrice;
             cartTotal.textContent = totalPrice.toLocaleString();
 
             const existingCartItem = cartContainer.querySelector(`[data-item="${itemName}"]`);
             if (existingCartItem) {
-                const itemQuantityElement = existingCartItem.querySelector('.item-num');
-                itemQuantityElement.textContent = itemQuantities[itemName];
+                existingCartItem.querySelector('.item-num').textContent = itemQuantities[itemName];
             } else {
                 const itemBrand = itemSection.querySelector('.clothing-detail p, .accessories-detail p').textContent;
-                const itemImageSrc = itemSection.querySelector('.clothing-list-item img, .accessories-list-item img').getAttribute('src');
+                const itemImageSrc = itemSection.querySelector('img').getAttribute('src');
 
                 const cartItem = document.createElement('div');
                 cartItem.classList.add('cart-item');
@@ -100,13 +103,12 @@ function handleAddToCart() {
                         <div class="item-brand">${itemBrand}</div>
                         <div class="item-price">${itemPriceString}</div>
                         <div class="item-quantity">
-                            <div class="item-minus"> - </div>
+                            <div class="item-minus">-</div>
                             <div class="item-num">${itemQuantities[itemName]}</div>
-                            <div class="item-plus"> + </div>
+                            <div class="item-plus">+</div>
                         </div>
                     </div>
                 `;
-
                 cartContainer.appendChild(cartItem);
 
                 const itemMinus = cartItem.querySelector('.item-minus');
@@ -146,8 +148,7 @@ function handleAddToCart() {
 }
 handleAddToCart();
 
-
-// Product details page
+// Product details page logic
 function productDetailsPage() {
     const clothingItems = document.querySelectorAll(".clothing-list");
     const accessoriesItems = document.querySelectorAll(".accessories-list");
@@ -180,44 +181,44 @@ function productDetailsPage() {
 
         redirectToProductDetailsPage(itemType, itemName, itemBrand, itemPrice, itemImageSrc);
     }
-    
+
     clothingItems.forEach(item => item.addEventListener("click", handleItemClick));
     accessoriesItems.forEach(item => item.addEventListener("click", handleItemClick));
 
     if (itemName && itemBrand && itemPrice && itemType && itemImageSrc) {
         const productDetails = document.querySelector(".product");
-        const productHTML = `
-            <div class="product-list">
-                <div class="item-image">
-                    <img src="${itemImageSrc}" alt="${itemName}">
-                </div>
-                <div class="item-details">
-                    <h3>${itemName}</h3>
-                    <p>${itemType}</p>
-                    <p>${itemBrand}</p>
-                    <p>${itemPrice}</p>
-                    <div class="${itemType}-cart-btn product-page-cart-btn">
-                        <i class="ri-shopping-bag-line"></i>
-                        <span>Add to Cart</span>
+        if (productDetails) {
+            const productHTML = `
+                <div class="product-list">
+                    <div class="item-image">
+                        <img src="${itemImageSrc}" alt="${itemName}">
+                    </div>
+                    <div class="item-details">
+                        <h3>${itemName}</h3>
+                        <p>${itemType}</p>
+                        <p>${itemBrand}</p>
+                        <p>${itemPrice}</p>
+                        <div class="${itemType}-cart-btn product-page-cart-btn">
+                            <i class="ri-shopping-bag-line"></i>
+                            <span>Add to Cart</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
-        productDetails.innerHTML = productHTML;
+            `;
+            productDetails.innerHTML = productHTML;
 
-        // Optional: handle Add to Cart directly from product page
-        const productCartBtn = document.querySelector('.product-page-cart-btn');
-        if (productCartBtn) {
-            productCartBtn.addEventListener('click', function () {
-                alert('Added to cart! (You can integrate full cart logic here)');
-            });
+            const productCartBtn = document.querySelector('.product-page-cart-btn');
+            if (productCartBtn) {
+                productCartBtn.addEventListener('click', function () {
+                    alert('Added to cart! (You can extend full cart logic here)');
+                });
+            }
         }
     }
 }
 productDetailsPage();
 
-
-// Similar products
+// Similar products logic
 function similarProducts() {
     const urlParams = new URLSearchParams(window.location.search);
     const itemType = urlParams.get('itemType');
